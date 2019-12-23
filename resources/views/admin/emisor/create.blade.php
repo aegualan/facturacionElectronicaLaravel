@@ -27,6 +27,15 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group {{$errors->has('direccionMatriz') ? ' has-error' : ''}}">
+                            <label for="direccionMatriz" class="col-sm-2 control-label">Dirección Matriz:</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" rows="2" id="direccionMatriz" name="direccionMatriz"></textarea>
+                                @if ($errors->has('direccionMatriz'))
+                                <span class="help-block">{{ $errors->first('direccionMatriz') }}</span>
+                                @endif
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
