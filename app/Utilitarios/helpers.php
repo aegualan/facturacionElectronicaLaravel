@@ -15,5 +15,28 @@ function isActive($url){
     return request()->routeIs($url) ? 'active':'';
 }
 
+function  formatoWeb($valor,$tipoDatos){
+    $valorFormateado = '';
+    switch ($tipoDatos){
+        case 'S':
+            if(empty($valor)){
+               $valorFormateado = '*';
+            }else{
+              $valorFormateado =  mb_strtoupper($valor,'utf-8');
+            }
+            break;
+        case 'N':
+            if(empty($valor)){
+               $valorFormateado = '0';
+            }else{
+              $valorFormateado =  $valor;
+            }
+            break;
+            
+    }
+    
+    return $valorFormateado;
+}
+
 
 

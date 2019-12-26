@@ -20,7 +20,7 @@
 
         <link rel="stylesheet" href="{{Request::root()}}/assets/themes/admin/dist/css/skins/_all-skins.min.css">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css">
+     
      
 
         <!-- Google Font -->
@@ -562,8 +562,6 @@
         <script src="{{Request::root()}}/assets/themes/admin/dist/js/adminlte.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="{{Request::root()}}/assets/themes/admin/dist/js/demo.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"/>
 
         <script type="text/javascript">
 
@@ -576,7 +574,7 @@
                                     var setTimpoEjecucion = null;
                                     var setTimpoSalida = null;
                                     function SessionExpireAlert() {
-                                        var tiempoSession = 60;
+                                        var tiempoSession = 10;
                                         var timeout = (tiempoSession * 1000 * 60);
                                         var seconds = timeout / 1000;
                                         //console.log(seconds);
@@ -623,13 +621,6 @@
 
         </script>
         
-        <script>
-            new Dropzone ('.dropzone',{
-                url:'/emisor',
-                dictDefaultMessage:'Arrastre aquí el logo para subir'
-            });
-            
-            Dropzone.autoDiscover = false;
-        </script>
+  
     </body>
 </html>

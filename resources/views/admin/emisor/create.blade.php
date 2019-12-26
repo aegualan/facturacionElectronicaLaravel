@@ -12,7 +12,7 @@
                         <div class="form-group {{$errors->has('razonSocial') ? ' has-error' : ''}}">
                             <label for="razonSocial" class="col-sm-2 control-label">Razón Social:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="razonSocial" name="razonSocial" value="{{ old('razonSocial') }}">
+                                <input type="text" class="form-control" id="razonSocial" name="razonSocial" value="{{old('razonSocial')}}">
                                 @if ($errors->has('razonSocial'))
                                 <span class="help-block">{{ $errors->first('razonSocial') }}</span>
                                 @endif
@@ -30,9 +30,18 @@
                         <div class="form-group {{$errors->has('direccionMatriz') ? ' has-error' : ''}}">
                             <label for="direccionMatriz" class="col-sm-2 control-label">Dirección Matriz:</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" rows="2" id="direccionMatriz" name="direccionMatriz"></textarea>
+                                <textarea class="form-control" rows="2" id="direccionMatriz" name="direccionMatriz">{{ old('direccionMatriz') }}</textarea>
                                 @if ($errors->has('direccionMatriz'))
                                 <span class="help-block">{{ $errors->first('direccionMatriz') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group {{$errors->has('direccionEstablecimiento') ? ' has-error' : ''}}">
+                            <label for="direccionEstablecimiento" class="col-sm-2 control-label">Dirección Establecimiento:</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" rows="2" id="direccionEstablecimiento" name="direccionEstablecimiento">{{ old('direccionEstablecimiento') }}</textarea>
+                                @if ($errors->has('direccionEstablecimiento'))
+                                <span class="help-block">{{ $errors->first('direccionEstablecimiento') }}</span>
                                 @endif
                             </div>
                         </div>
@@ -57,11 +66,11 @@
                             <label for="codigoEstablecimiento" class="col-sm-8 control-label">Código Establecimiento:</label>
                             <div class="col-sm-4">
                                 <input type="text" class="form-control" id="codigoEstablecimiento" placeholder="001" name="codigoEstablecimiento" value="{{ old('codigoEstablecimiento') }}">
-
+                                @if ($errors->has('codigoEstablecimiento'))
+                                <span class="help-block">{{ $errors->first('codigoEstablecimiento') }}</span>
+                                @endif
                             </div>
-                            @if ($errors->has('codigoEstablecimiento'))
-                            <span class="help-block">{{ $errors->first('codigoEstablecimiento') }}</span>
-                            @endif
+
                         </div>
                         <div class="form-group {{$errors->has('codigoPuntoEmision') ? ' has-error' : ''}}">
                             <label for="codigoPuntoEmision" class="col-sm-8 control-label">Código Punto Emisión:</label>
@@ -82,7 +91,16 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="dropzone"></div>
+                            <label for="logo" class="col-sm-4 control-label">Logo Empresa:</label>
+                            <div class="col-sm-8">
+                                <input type="file" id="logo" name="logo" accept="image/.jpg,.png"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-6">
+                                <button type="submit" class="btn btn-primary"><i>GUARDAR</i></button>
+                            </div>
                         </div>
                     </div>
                 </div>
